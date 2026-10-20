@@ -5,6 +5,13 @@ por IP: red local o red privada (ZeroTier, Radmin, Hamachi, Tailscale), con y si
 juego real se mide en el proyecto hermano `..\Barotrauma Laboratorio` (leer su `AGENTS.md` primero). Este fichero se
 actualiza en el mismo turno en que cambie algo.
 
+> **Repositorio PUBLICO** (2026-10-20): https://github.com/StevenCarrilloLoor/juego-barotrauma-lan. Antes de cada
+> `git push`: `revisar_secretos.py <esta carpeta> --todo` (en `_archivo\orden-20261020` del espacio de trabajo) con
+> ALTO 0 y MEDIO 0: nada de IP reales de VPN, id de redes ZeroTier, SteamID ni rutas de usuario de Windows. Las IP
+> de las pruebas son inventadas y las de Tailscale se escriben por octetos (`IpTs`, `$script:BL_RangoTailscale`).
+> `.gitattributes` guarda `.bat`, `.ps1` y `.txt` tal cual (CRLF): no quitarlo, cmd.exe lo necesita tambien en la
+> descarga ZIP de GitHub.
+>
 > **PAUSA 2026-10-08, 13:52 local — la versión 0.2 NO está empezada en los ficheros.** Lo que hay en disco es la 0.1
 > íntegra (63 pruebas en verde; el laboratorio la ensayó con el juego real sin encontrar defectos y sin tocarla). De la
 > 0.2 solo se hizo la lectura de `..\Barotrauma Laboratorio\investigacion\MEDIDAS-PARA-LA-ENTREGA.md` y
