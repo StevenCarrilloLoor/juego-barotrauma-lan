@@ -1,0 +1,13 @@
+# Se generan al usarlo y llevan las direcciones del anfitrion
+PARA COMPARTIR/
+anfitrion/ajustes-anfitrion.json
+anfitrion/servidor-actual.json
+*.zip
+
+# Temporales de las pruebas
+pruebas/_tmp/
+
+# Cosas de este PC (icono de carpeta, accesos directos)
+desktop.ini
+icono.ico
+*.lnk

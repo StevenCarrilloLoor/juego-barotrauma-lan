@@ -1,0 +1,5 @@
+# Los guiones de Windows se guardan tal cual (CRLF y ASCII): cmd.exe y PowerShell 5.1 los quieren asi, tambien
+# en la descarga ZIP de GitHub.
+*.bat -text
+*.ps1 -text
+*.txt -text

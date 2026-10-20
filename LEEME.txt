@@ -1,0 +1,64 @@
+BAROTRAUMA LAN 0.1  -  PARA TI (el anfitrion)
+
+ESTADO, 2026-10-08:  ESCRITO Y PROBADO SIN EL JUEGO.  FALTA EL ENSAYO CON EL JUEGO REAL.
+  Los guiones pasan sus pruebas, pero ninguna prueba abre Barotrauma. Con el juego de verdad lo mide el
+  laboratorio (carpeta hermana "Barotrauma Laboratorio"). Hasta entonces es un borrador: no lo des por bueno.
+  Lo que el laboratorio YA ha visto hoy con el juego real (en este mismo PC, por 127.0.0.1): un cliente sin
+  Steam entra por IP a un servidor dedicado con la autenticacion apagada. Es la base de todo esto. Lo demas
+  esta en la lista del final.
+
+QUE ES
+  Tu servidor dedicado de Barotrauma en una carpeta propia: tu instalacion de Steam, tus partidas y tus mods no
+  se tocan. Se entra por IP: red local o VPN (ZeroTier, Radmin, Hamachi, Tailscale). Entran a la vez los que
+  tienen Steam conectado y los que no. Cada amigo recibe un .zip pequeno y entra con un doble clic.
+
+COMO SE USA  (carpeta "anfitrion")
+  1. Doble clic en  1-ABRIR-SERVIDOR.bat
+       La primera vez copia el servidor a D:\BarotraumaLAN (unos 150 MB) y crea ajustes-anfitrion.json.
+       Te ensena tus direcciones, deja el .zip de tus amigos en "PARA COMPARTIR" y abre el servidor en su
+       propia ventana. Para CERRARLO: escribe  quit  en ESA ventana y pulsa Intro.
+       Si Windows pregunta por el cortafuegos: PERMITIR, marcando redes privadas Y publicas. No pulses Cancelar.
+  2. Manda el .zip a tus amigos (Discord o USB). Ellos: extraer la carpeta y doble clic en
+     JUGAR-BAROTRAUMA-LAN.bat
+  3. Para jugar tu: 2-JUGAR-YO.bat  (entra por 127.0.0.1, que es quien administra el servidor)
+
+  Si tus amigos no entran y el servidor dice que falta la regla del cortafuegos: clic derecho en
+  CORTAFUEGOS-ABRIR-como-administrador.bat - Ejecutar como administrador. Anade UNA regla (entrada, UDP, tu
+  puerto, solo ese programa). Se quita con CORTAFUEGOS-QUITAR-como-administrador.bat.
+  VER-ESTADO-sin-tocar-nada.bat te dice como esta todo sin escribir ni abrir nada.
+
+AJUSTES  (anfitrion\ajustes-anfitrion.json; se abre con el Bloc de notas; despues vuelve a abrir el servidor)
+  nombreAnfitrion    como te llaman tus amigos (sale tu usuario de Windows: cambialo)
+  nombreServidor     vacio = el que tenias en el juego
+  puerto             27715 (UDP). Si lo cambias: .zip nuevo a tus amigos y regla del cortafuegos otra vez
+  maxJugadores       8 (el juego admite hasta 16)
+  contrasena         vacia = sin contrasena. El juego se la pide a cada amigo; su lanzador se la ensena
+  datos              "propios": el servidor guarda sus partidas en D:\BarotraumaLAN\partidas y no ve las de tu
+                     juego ni tus mods de Steam.  "los-de-mi-juego": usa tu carpeta de datos (ve tus campanas),
+                     pero el juego borra de ahi los mods del Workshop que le fallen al cargar.
+  identidad          dejalo en "pendiente" (ver abajo)
+  sonda              "limpia", "ping" o "ninguna": como comprueba cada amigo que el servidor esta ahi
+  direccionInternet  vacio = apagado. Para entrar por internet sin VPN, escribe aqui tu IP publica o tu nombre
+                     de dominio y redirige el puerto UDP en tu router. El guion no la averigua por su cuenta.
+
+COSAS QUE TIENES QUE SABER
+  - VERSION: todos con la misma. Si Steam te actualiza el juego, al abrir el servidor se rehace solo y te avisa:
+    tus amigos tienen que actualizar tambien y hay que mandarles el .zip nuevo.
+  - QUIEN ES QUIEN: sin Steam, el servidor reconoce a cada jugador por su NOMBRE; con Steam conectado, por su
+    cuenta. El mismo amigo un dia con Steam y otro sin el son DOS jugadores (personaje y permisos aparte). Y
+    quien sepa el nombre de otro puede entrar como el. Entre amigos y por red privada es asumible.
+    Hay un ajuste para que todos vayan siempre por nombre (identidad = "por-nombre"), pero esta SIN MEDIR.
+  - Tu Wi-Fi, tu ZeroTier y tu Radmin estan marcadas como redes Publicas en Windows: por eso la regla del
+    cortafuegos vale para todos los perfiles.
+  - MODS: este servidor arranca sin mods. Esta version no los gestiona.
+  - CAMPANAS QUE YA TENIAS: con datos "propios" el servidor no las ve. Como traerlas esta sin mirar.
+
+SIN MEDIR TODAVIA CON EL JUEGO REAL
+  - Que la carpeta de servidor que monta este guion arranca (el laboratorio monta la suya de forma parecida).
+  - Que el servidor real contesta a la sonda del lanzador y que la sonda no deja rastro ni veta a nadie.
+  - Que el juego entra solo tras el doble clic (puede pedir una tecla al acabar de cargar) y que avisos salen
+    cuando Steam esta cerrado.
+  - La regla del cortafuegos, y entrar desde OTRO PC por la red local y por cada VPN.
+  - Los permisos de administrador por 127.0.0.1, la contrasena y el ajuste "por-nombre".
+
+Para una IA: AGENTS.md.     Pruebas sin el juego: pruebas\EJECUTAR-PRUEBAS.bat

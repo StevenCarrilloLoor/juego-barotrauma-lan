@@ -1,0 +1,40 @@
+BAROTRAUMA LAN 0.1  -  PARA ENTRAR AL SERVIDOR DE TU AMIGO
+
+QUE NECESITAS
+  - Barotrauma instalado en tu PC (tu propia copia), en la MISMA version que el servidor.
+    El lanzador lo comprueba y te avisa antes de abrir nada.
+  - Estar en la misma red que el anfitrion: la misma red local (wifi o cable) o la misma VPN
+    conectada (ZeroTier, Tailscale, Hamachi o Radmin VPN).
+  No hace falta tener Steam conectado. Por red local tampoco hace falta internet
+  (las VPN si suelen necesitarlo para conectarse).
+
+COMO SE USA
+  1. Saca la carpeta ENTERA del .zip (clic derecho - Extraer todo). Dejala donde quieras,
+     pero NO dentro de la carpeta del juego.
+  2. Doble clic en  JUGAR-BAROTRAUMA-LAN.bat
+       - Si Windows dice "Windows protegio su PC": Mas informacion - Ejecutar de todas formas.
+         Son ficheros de texto: puedes abrirlos con el Bloc de notas y leer lo que hacen.
+       - La primera vez te pregunta como te quieres llamar. Usa SIEMPRE el mismo nombre,
+         escrito igual: tu personaje y tus permisos van con el nombre.
+  3. Se abre el juego. Cuando termine de cargar, pulsa una tecla o haz clic dentro del juego:
+     entonces entra al servidor.
+       - Si Steam no esta abierto, puede que el juego avise de que no encuentra Steam.
+         Acepta el aviso y sigue.
+
+SI NO ENTRA
+  - Doble clic en  COMPROBAR-SIN-ABRIR-EL-JUEGO.bat  y mandale una captura al anfitrion.
+    Dice donde esta tu juego, su version, y que direccion del servidor contesta y cual no.
+  - "No se puede entrar: version distinta": uno de los dos tiene que actualizar el juego.
+  - "No contesta ninguna direccion": el anfitrion tiene que tener el servidor abierto, y tu
+    tienes que estar en su red local o tener conectada la misma VPN que el.
+  - Si el juego ya estaba abierto, cierralo antes: solo entra directo al arrancar.
+
+QUE HACE Y QUE NO HACE
+  - Lee donde esta tu juego y su version, pregunta al servidor si esta ahi y abre TU juego con
+    la direccion ya puesta. Nada mas.
+  - No instala nada, no pide permisos de administrador, no sale a internet y no toca la
+    carpeta del juego.
+  - Guarda tu nombre y la carpeta del juego en  %APPDATA%\BarotraumaLAN\jugador.json
+    (un fichero de texto). Borralo si quieres que te lo vuelva a preguntar.
+
+Es la primera version (0.1). Si algo falla, avisa al anfitrion con una captura.
